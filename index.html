@@ -1,57 +1,172 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
- <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog do Roblox</title>
     <style>
-   header {
-         background-color:#D6CB8F;
-         color: #EFCB00;
-         text-align: center;
-         max-width: 800px;
-         margin: 0 auto;
- 
-}
-  main {
-         background-color: #D6CB8F;
-         color:#EFCB00;
-         max-width: 800px;
-         margin: 0 auto;
-         padding: 16px;
-         display: flex;
-}
-  img{
-         width: 80px;
-         height: 80px;
+        /* Estilos Gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e5e5e5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-}
-  p{ font-weight: bold;
+        /* Cabeçalho */
+        header {
+            background-color: #232527; /* Cor escura estilo Roblox */
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid #00a2ff; /* Detalhe em azul */
+        }
 
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
 
-  }
-</style>
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #bdc3c7;
+            font-weight: normal;
+        }
+
+        /* Principal */
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Espaço entre os artigos */
+        }
+
+        /* Artigos/Posts */
+        article {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Responsividade para telas maiores: imagem do lado do texto */
+        @media (min-width: 600px) {
+            article {
+                flex-direction: row;
+            }
+        }
+
+        /* Imagens dos artigos */
+        article img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Conteúdo dos Textos */
+        .conteudo {
+            flex: 1;
+        }
+
+        .conteudo h2 {
+            margin-top: 0;
+            color: #232527;
+        }
+
+        .artigo-autor {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .conteudo p {
+            line-height: 1.6;
+        }
+
+        /* Botões de interação */
+        .interacao {
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #f1f2f6;
+            border: 1px solid #dcdde1;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 10px;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #e84118;
+            color: white;
+            border-color: #e84118;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
 </head>
 <body>
-<header>
-         <h1>Meu blog do roblox</h1>
-         <p>Vou compartilhar informações sobre o roblox</p>
-<header>
-<article>
-<img src="imagem-blog.png"
-alt="Logotipo conceitual de tecnologia e educacao: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi‑Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
 
-<div>
-<h2>Meu primeiro post</h2>
-<p class="artigo-autor">Por: Murilo Rodrigues Pereira </p>
-<p>Boas-vindas ao meu novo blog! Aqui vou compartilhar algumas historias, acontecimentos e
-lendas do jogo roblox. </p>
-<button>❤️<span>0</span></button>
-<button>👍<span>0</span></button>
-</div>
-</article>
-</main>
- </body>
- </html>
+    <header>
+        <h1>Meu Blog do Roblox</h1>
+        <p>Histórias, lendas e curiosidades sobre o universo Roblox!</p>
+    </header>
+
+    <main>
+        <article>
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Controle de videogame retro iluminado, representando o mundo dos jogos.">
+            <div class="conteudo">
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: Murilo Rodrigues Pereira</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar algumas histórias, acontecimentos e lendas do jogo Roblox. Fique ligado para não perder nenhuma atualização e dicas exclusivas sobre os seus jogos favoritos dentro da plataforma.</p>
+                <div class="interacao">
+                    <button>❤️ <span>0</span></button>
+                    <button>👍 <span>0</span></button>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <img src="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Imagem conceitual de blocos de programação e tecnologia.">
+            <div class="conteudo">
+                <h2>Você sabia? O Roblox já se chamou Dynablocks!</h2>
+                <p class="artigo-autor">Por: Murilo Rodrigues Pereira</p>
+                <p>O Roblox não nasceu com o nome que conhecemos hoje. Quando foi criado por David Baszucki e Erik Cassel, em 2004, o projeto beta era chamado de <strong>Dynablocks</strong>. O nome só mudou para "Roblox" (uma mistura de Robots e Blocks) no ano de 2005, e o jogo foi lançado oficialmente para o público em 2006. É incrível ver como os gráficos mudaram desde aquela época!</p>
+                <div class="interacao">
+                    <button>❤️ <span>15</span></button>
+                    <button>👍 <span>22</span></button>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Imagem escura de matriz de computador, representando hackers e mistérios na internet.">
+            <div class="conteudo">
+                <h2>A Lenda de John Doe e Jane Doe</h2>
+                <p class="artigo-autor">Por: Murilo Rodrigues Pereira</p>
+                <p>Se você joga Roblox há algum tempo, provavelmente já ouviu falar de <strong>John Doe</strong> e <strong>Jane Doe</strong>. Eles foram os primeiros perfis de teste criados pelos administradores em 2006. Por muito tempo, circulou uma lenda urbana assustadora de que eles eram hackers fantasmas que invadiriam contas de jogadores todo dia 18 de março. O Roblox já desmentiu isso, confirmando que são apenas contas inativas de teste, mas a história continua viva na comunidade!</p>
+                <div class="interacao">
+                    <button>❤️ <span>42</span></button>
+                    <button>👍 <span>50</span></button>
+                </div>
+            </div>
+        </article>
+    </main>
+
+</body>
+</html>
