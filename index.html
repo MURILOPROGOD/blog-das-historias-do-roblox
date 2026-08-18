@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox: Além dos Blocos | Multiverso Gamer</title>
+    <!-- Google Fonts para tipografia profissional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-red: #ff4757;
+            --accent-blue: #00a2ff;
+            --accent-purple: #a855f7;
+            --border-color: #334155;
+            --radius: 16px;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -12,89 +29,113 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
-            color: #1c1e21;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
         }
 
+        /* Header e Hero */
         header {
-            background: linear-gradient(135deg, #111214 0%, #232527 100%);
+            background: radial-gradient(circle at top, #1e1b4b 0%, #0f172a 100%);
             color: #ffffff;
             text-align: center;
-            padding: 50px 20px 40px;
-            border-bottom: 5px solid #00a2ff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 70px 20px 50px;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-red), var(--accent-blue));
+            border-radius: 2px;
         }
 
         header .logo-box {
             display: inline-block;
-            background-color: #e84118;
+            background: linear-gradient(135deg, var(--accent-red), #ff6b81);
             color: #fff;
+            font-family: 'Outfit', sans-serif;
             font-weight: 900;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.9rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
         }
 
         header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 8px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.2rem;
+            margin-bottom: 12px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         header p {
             font-size: 1.15rem;
-            color: #bdc3c7;
-            max-width: 650px;
+            color: var(--text-secondary);
+            max-width: 680px;
             margin: 0 auto;
         }
 
+        /* Container Principal */
         main {
-            max-width: 920px;
-            margin: 35px auto;
+            max-width: 960px;
+            margin: 40px auto;
             padding: 0 20px;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 32px;
         }
 
+        /* Cartões de Artigo */
         article {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background-color: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            border: 1px solid #e1e4e8;
+            gap: 24px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-color);
         }
 
         article:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+            transform: translateY(-6px);
+            border-color: #475569;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        @media (min-width: 640px) {
+        @media (min-width: 768px) {
             article {
                 flex-direction: row;
-                align-items: flex-start;
+                align-items: stretch;
             }
         }
 
         article img {
             width: 100%;
-            max-width: 240px;
-            height: 170px;
-            border-radius: 8px;
+            max-width: 280px;
+            height: 200px;
+            border-radius: 12px;
             object-fit: cover;
             flex-shrink: 0;
-            background-color: #eaedd0;
+            background-color: #0f172a;
+            border: 1px solid var(--border-color);
         }
 
         .conteudo {
@@ -106,64 +147,70 @@
         .header-artigo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
         }
 
         .categoria-tag {
-            background-color: #eef7ff;
-            color: #0084ff;
+            background: rgba(0, 162, 255, 0.15);
+            color: var(--accent-blue);
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
             text-transform: uppercase;
+            border: 1px solid rgba(0, 162, 255, 0.3);
         }
 
         .artigo-autor {
             font-size: 0.85rem;
-            color: #7f8c8d;
-            font-style: italic;
+            color: var(--text-secondary);
         }
 
         .conteudo h2 {
-            font-size: 1.45rem;
-            color: #1c1e21;
-            margin-bottom: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 12px;
             line-height: 1.3;
         }
 
         .conteudo p {
-            font-size: 1rem;
-            color: #4a4d52;
-            margin-bottom: 18px;
-            line-height: 1.6;
+            font-size: 0.98rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
         }
 
+        /* Botões Interativos */
         .interacao {
             margin-top: auto;
             display: flex;
             gap: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         button {
-            background-color: #f1f2f6;
-            border: 1px solid #dcdde1;
-            padding: 8px 16px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
             border-radius: 20px;
             cursor: pointer;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: #2f3640;
+            color: var(--text-primary);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             transition: all 0.2s ease;
             user-select: none;
         }
 
         button:hover {
-            background-color: #e4e6eb;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: #64748b;
         }
 
         button:active {
@@ -171,25 +218,26 @@
         }
 
         button.btn-coracao.ativo {
-            background-color: #ffeae8;
-            color: #e84118;
-            border-color: #e84118;
+            background-color: rgba(255, 71, 87, 0.15);
+            color: var(--accent-red);
+            border-color: var(--accent-red);
         }
 
         button.btn-like.ativo {
-            background-color: #e8f4ff;
-            color: #00a2ff;
-            border-color: #00a2ff;
+            background-color: rgba(0, 162, 255, 0.15);
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
         }
 
+        /* Rodapé */
         footer {
             text-align: center;
-            padding: 30px 20px;
-            color: #7f8c8d;
+            padding: 40px 20px;
+            color: var(--text-secondary);
             font-size: 0.9rem;
-            background-color: #ffffff;
-            border-top: 1px solid #e1e4e8;
-            margin-top: 50px;
+            background-color: #0b1120;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
         }
     </style>
 </head>
@@ -198,7 +246,7 @@
     <header>
         <div class="logo-box">Metaverso Gamer</div>
         <h1>Roblox: Além dos Blocos</h1>
-        <p>Explore o universo onde a imaginação ganha vida! Descubra os bastidores da criação, lendas misteriosas e as tendências que movem milhões de jogadores diariamente.</p>
+        <p>Acompanhe a trajetória completa, curiosidades profundas, economia virtual e os mistérios que moldaram a maior plataforma de criação do planeta.</p>
     </header>
 
     <main>
@@ -209,11 +257,11 @@
                     <span class="categoria-tag">Apresentação</span>
                     <span class="artigo-autor">Por: Murilo Rodrigues Pereira</span>
                 </div>
-                <h2>Bem-vindos ao Blog do Roblox!</h2>
-                <p>Boas-vindas ao meu espaço dedicado ao multiverso do Roblox. Aqui exploramos desde o nascimento da plataforma em 2004 até os maiores sucessos atuais. Fique ligado para conferir análises, histórias de bastidores e novidades exclusivas!</p>
+                <h2>Bem-vindos ao Multiverso Roblox!</h2>
+                <p>Este blog foi criado para ser um acervo definitivo sobre o universo Roblox. Aqui examinaremos como uma modesta simulação de física em 2D se transformou em uma potência global do entretenimento, reunindo milhões de desenvolvedores e jogadores diariamente. Prepare-se para mergulhar em análises técnicas, histórias do passado e segredos da comunidade.</p>
                 <div class="interacao">
-                    <button class="btn-coracao" aria-label="Amei">❤️ <span>18</span></button>
-                    <button class="btn-like" aria-label="Gostei">👍 <span>24</span></button>
+                    <button class="btn-coracao" aria-label="Amei">❤️ <span>42</span></button>
+                    <button class="btn-like" aria-label="Gostei">👍 <span>58</span></button>
                 </div>
             </div>
         </article>
@@ -225,11 +273,11 @@
                     <span class="categoria-tag">História</span>
                     <span class="artigo-autor">Por: Murilo Rodrigues Pereira</span>
                 </div>
-                <h2>Das Origens em 2004 ao Nome Roblox: Conheça o Dynablocks</h2>
-                <p>Antes do Roblox existir, seus fundadores David Baszucki e Erik Cassel criaram um software educativo chamado <em>Interactive Physics</em>. Em 2004, decidiram expandir essa ideia física para um ambiente 3D sob o nome beta <strong>Dynablocks</strong>. O nome "Roblox" (fusão das palavras <em>Robots</em> e <em>Blocks</em>) foi adotado em 2005, e o serviço foi aberto ao público oficialmente em 2006.</p>
+                <h2>Do Interactive Physics ao Dynablocks: A Gênese de um Gigante</h2>
+                <p>Nos anos 1980 e 1990, David Baszucki e Erik Cassel desenvolveram o <em>Interactive Physics</em>, um programa voltado para ensinar física nas escolas. O sucesso das simulações levou os criadores a pensar: e se os alunos pudessem construir seus próprios mundos e interagir uns com os outros? Em 2004, nasceu a versão beta batizada de <strong>Dynablocks</strong>. Tras ajustes de marca e arquitetura de rede, o nome definitivo "Roblox" (fusão de <em>Robots</em> + <em>Blocks</em>) foi lançado oficialmente em setembro de 2006.</p>
                 <div class="interacao">
-                    <button class="btn-coracao" aria-label="Amei">❤️ <span>56</span></button>
-                    <button class="btn-like" aria-label="Gostei">👍 <span>72</span></button>
+                    <button class="btn-coracao" aria-label="Amei">❤️ <span>98</span></button>
+                    <button class="btn-like" aria-label="Gostei">👍 <span>112</span></button>
                 </div>
             </div>
         </article>
@@ -241,11 +289,11 @@
                     <span class="categoria-tag">Economia</span>
                     <span class="artigo-autor">Por: Murilo Rodrigues Pereira</span>
                 </div>
-                <h2>A Era dos Tickets (Tix): A Moeda Gratuita que Deixou Saudades</h2>
-                <p>Em 2007, o Roblox introduziu os <strong>Tickets (Tix)</strong>, uma moeda concedida diariamente aos jogadores apenas por fazerem login. Os Tix podiam ser trocados por Robux na "Currency Exchange". No entanto, em abril de 2016, a plataforma encerrou os Tix para simplificar a economia e combater bots, marcando o fim de uma era inesquecível para os jogadores antigos.</p>
+                <h2>A Era dos Tickets (Tix) e a Economia do Robux</h2>
+                <p>Introduzidos em 2007, os <strong>Tickets (Tix)</strong> eram uma moeda gratuita concedida como recompensa diária por login e por visitas nos jogos dos criadores. Os jogadores podiam utilizar a <em>Currency Exchange</em> para converter Tix em Robux livremente. Em 14 de abril de 2016, a plataforma encerrou o sistema de Tix para estabilizar o mercado interno, combater redes de farm por bots e unificar o ecossistema financeiro no Robux.</p>
                 <div class="interacao">
-                    <button class="btn-coracao" aria-label="Amei">❤️ <span>104</span></button>
-                    <button class="btn-like" aria-label="Gostei">👍 <span>88</span></button>
+                    <button class="btn-coracao" aria-label="Amei">❤️ <span>210</span></button>
+                    <button class="btn-like" aria-label="Gostei">👍 <span>185</span></button>
                 </div>
             </div>
         </article>
@@ -257,11 +305,11 @@
                     <span class="categoria-tag">Lendas</span>
                     <span class="artigo-autor">Por: Murilo Rodrigues Pereira</span>
                 </div>
-                <h2>A Verdade por Trás da Lenda de John Doe e Jane Doe</h2>
-                <p>Criados em 2006, <strong>John Doe</strong> e <strong>Jane Doe</strong> foram contas oficiais de teste usadas pelos desenvolvedores. Anos depois, rumores na internet diziam que eles seriam hackers que invadiriam a plataforma no dia 18 de março. O próprio Roblox esclareceu que os perfis eram totalmente inofensivos, mas a lenda permaneceu como um dos maiores folclores da comunidade!</p>
+                <h2>O Folclore Digital: A Mítica História de John e Jane Doe</h2>
+                <p>Em 2006, a equipe do Roblox registrou as contas <strong>John Doe</strong> e <strong>Jane Doe</strong> para realizar testes de multiplayer nos servidores. Anos depois da inatividade dos perfis, fóruns e canais do YouTube popularizaram o boato de que as contas pertenceriam a hackers perigosos que retornariam em um "18 de março" para apagar a plataforma. A administração esclareceu que os perfis eram inofensivos, mas a história consolidou-se como a creepypasta mais famosa da comunidade.</p>
                 <div class="interacao">
-                    <button class="btn-coracao" aria-label="Amei">❤️ <span>89</span></button>
-                    <button class="btn-like" aria-label="Gostei">👍 <span>95</span></button>
+                    <button class="btn-coracao" aria-label="Amei">❤️ <span>175</span></button>
+                    <button class="btn-like" aria-label="Gostei">👍 <span>160</span></button>
                 </div>
             </div>
         </article>
@@ -273,11 +321,11 @@
                     <span class="categoria-tag">Tecnologia</span>
                     <span class="artigo-autor">Por: Murilo Rodrigues Pereira</span>
                 </div>
-                <h2>Roblox Studio & Luau: Como Jovens se Tornaram Desenvolvedores</h2>
-                <p>O grande segredo do sucesso do Roblox é o <strong>Roblox Studio</strong>, sua ferramenta de criação acessível que utiliza a linguagem de programação <strong>Luau</strong> (uma derivação da linguagem brasileira Lua). Através do programa DevEx (Developer Exchange), criadores podem converter Robux em dinheiro real, transformando hobbistas em empresários de jogos.</p>
+                <h2>Roblox Studio & Luau: A Motor que Transforma Jogadores em Desenvolvedores</h2>
+                <p>Diferente de engines tradicionais, o <strong>Roblox Studio</strong> oferece um ecossistema integrado com servidores já configurados na nuvem. Ele utiliza a linguagem <strong>Luau</strong>, uma derivação otimizada da linguagem brasileira Lua. Com o programa DevEx (Developer Exchange), criadores independentes e estúdios profissionais podem converter Robux acumulados diretamente para moedas reais, abrindo portas para carreiras no mercado de tecnologia.</p>
                 <div class="interacao">
-                    <button class="btn-coracao" aria-label="Amei">❤️ <span>67</span></button>
-                    <button class="btn-like" aria-label="Gostei">👍 <span>81</span></button>
+                    <button class="btn-coracao" aria-label="Amei">❤️ <span>130</span></button>
+                    <button class="btn-like" aria-label="Gostei">👍 <span>145</span></button>
                 </div>
             </div>
         </article>
@@ -289,11 +337,11 @@
                     <span class="categoria-tag">Sucessos</span>
                     <span class="artigo-autor">Por: Murilo Rodrigues Pereira</span>
                 </div>
-                <h2>A Era dos Bilhões de Visitas: Blox Fruits, Adopt Me! e Brookhaven</h2>
-                <p>Com o passar dos anos, os jogos no Roblox atingiram patamares de megaproduções. Títulos como <strong>Adopt Me!</strong>, <strong>Brookhaven RP</strong> e <strong>Blox Fruits</strong> acumulam dezenas de bilhões de visitas cada um, rivalizando com grandes jogos de consoles e demonstrando a força do metaverso da plataforma.</p>
+                <h2>O Fenômeno dos Bilhões de Visitas: Blox Fruits, Adopt Me! e Brookhaven</h2>
+                <p>A evolução técnica da plataforma permitiu a criação de jogos complexos com suporte a dezenas de milhares de jogadores simultâneos. Títulos como <strong>Adopt Me!</strong>, focado em trocas e vida social, <strong>Brookhaven RP</strong>, e o sucesso de RPG de ação <strong>Blox Fruits</strong> contam com bilhões de execuções. Esses números ultrapassam os índices de engajamento de grandes títulos tradicionais da indústria gamer.</p>
                 <div class="interacao">
-                    <button class="btn-coracao" aria-label="Amei">❤️ <span>142</span></button>
-                    <button class="btn-like" aria-label="Gostei">👍 <span>130</span></button>
+                    <button class="btn-coracao" aria-label="Amei">❤️ <span>280</span></button>
+                    <button class="btn-like" aria-label="Gostei">👍 <span>240</span></button>
                 </div>
             </div>
         </article>
