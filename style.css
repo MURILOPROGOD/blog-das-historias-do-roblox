@@ -1,7 +1,5 @@
-/* Importação das fontes do Google Fonts para garantir que funcionem mesmo fora do HTML */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@700;900&display=swap');
 
-/* Variáveis de cores e espaçamentos */
 :root {
     --bg-primary: #0f172a;
     --bg-card: #1e293b;
@@ -9,12 +7,10 @@
     --text-secondary: #94a3b8;
     --accent-red: #ff4757;
     --accent-blue: #00a2ff;
-    --accent-purple: #a855f7;
     --border-color: #334155;
     --radius: 16px;
 }
 
-/* Reset de margens e padding padrão */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -29,7 +25,6 @@ body {
     min-height: 100vh;
 }
 
-/* Header e Hero */
 header {
     background: radial-gradient(circle at top, #1e1b4b 0%, #0f172a 100%);
     color: #ffffff;
@@ -63,7 +58,6 @@ header .logo-box {
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 16px;
-    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
 }
 
 header h1 {
@@ -84,7 +78,6 @@ header p {
     margin: 0 auto;
 }
 
-/* Container Principal */
 main {
     max-width: 960px;
     margin: 40px auto;
@@ -94,7 +87,6 @@ main {
     gap: 32px;
 }
 
-/* Cartões de Artigo */
 article {
     background-color: var(--bg-card);
     border-radius: var(--radius);
@@ -103,17 +95,15 @@ article {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     border: 1px solid var(--border-color);
 }
 
 article:hover {
     transform: translateY(-6px);
     border-color: #475569;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsividade para telas maiores (Desktop/Tablets) */
 @media (min-width: 768px) {
     article {
         flex-direction: row;
@@ -167,17 +157,14 @@ article img {
     font-size: 1.6rem;
     color: #ffffff;
     margin-bottom: 12px;
-    line-height: 1.3;
 }
 
 .conteudo p {
     font-size: 0.98rem;
     color: #cbd5e1;
     margin-bottom: 20px;
-    line-height: 1.7;
 }
 
-/* Botões Interativos (Likes/Corações) */
 .interacao {
     margin-top: auto;
     display: flex;
@@ -199,16 +186,6 @@ button {
     align-items: center;
     gap: 8px;
     transition: all 0.2s ease;
-    user-select: none;
-}
-
-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: #64748b;
-}
-
-button:active {
-    transform: scale(0.95);
 }
 
 button.btn-coracao.ativo {
@@ -223,7 +200,6 @@ button.btn-like.ativo {
     border-color: var(--accent-blue);
 }
 
-/* Rodapé */
 footer {
     text-align: center;
     padding: 40px 20px;
@@ -232,3 +208,4 @@ footer {
     background-color: #0b1120;
     border-top: 1px solid var(--border-color);
     margin-top: 60px;
+}
